@@ -7,6 +7,7 @@ pd.set_option('max_colwidth', None)
 print("\n-----\n")
 
 #Create a variable to read the dataset
+df = pd.read_csv("heartDisease_2020_sampling.csv")
 
 
 print(
@@ -14,6 +15,7 @@ print(
 )
 
 #Print the dataset's first five rows
+df.head()
 
 
 input("\n Press Enter to continue.\n")
