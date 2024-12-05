@@ -33,12 +33,12 @@ print(df.head())
 input("\nPress Enter to continue.\n")
 
 #One hot encode the dataset
-# df = util.oneHotEncoder(df, ["Sex", "Race"])
+df = util.oneHotEncoder(df, ["Sex", "Race"])
 
 print(
     "\nHere is a preview of the dataset after one hot encoding. This will be the dataset used for data analysis: \n"
 )
-# print(df.head())
+print(df.head())
 
 
 
