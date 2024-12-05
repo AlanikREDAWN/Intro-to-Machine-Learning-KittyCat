@@ -48,23 +48,26 @@ input("\nPress Enter to continue.\n")
 
 #Creates and trains Decision Tree Model
 from sklearn.model_selection import train_test_split
+X = df.drop("HeartDisease", axis=1)
+y = df["HeartDisease"]
 
-
-
-
+X_train, X_test, y_train, y_test = train_test_split(X, y)
 
 from sklearn.tree import DecisionTreeClassifier
-
+clf = DecisionTreeClassifier(max_depth=3)
+clf = clf.fit(X_train, y_train)
 
 
 
 
 
 #Test the model with the testing data set and prints accuracy score
-
+test_predictions = clf.predict(X_test)
 
 from sklearn.metrics import accuracy_score
+test_acc = accuracy_score(y_test, test_predictions)
 
+print("The accuracy with the testing data set of the Decision Tree is: " + str(test_acc))
 
 
 
@@ -94,3 +97,5 @@ input("\nPress Enter to continue.\n")
 #Prints a text representation of the Decision Tree
 print("\nBelow is a text representation of how the Decision Tree makes choices:\n")
 input("\nPress Enter to continue.\n")
+
+util.printTree(clf, X.columns)
