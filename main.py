@@ -15,7 +15,7 @@ print(
 )
 
 #Print the dataset's first five rows
-df.head()
+print(df.head())
 
 
 input("\n Press Enter to continue.\n")
@@ -24,19 +24,22 @@ input("\n Press Enter to continue.\n")
 
 #Data Cleaning
 #Label encode the dataset
+df = util.labelEncoder(df, ["HeartDisease", "Smoking", "AlcoholDrinking", "AgeCategory", "PhysicalActivity", "GenHealth"])
 
 
 print("\nHere is a preview of the dataset after label encoding. \n")
-
+print(df.head())
 
 input("\nPress Enter to continue.\n")
 
 #One hot encode the dataset
-
+df = util.oneHotEncoder(df, ["Sex", "Race"])
 
 print(
     "\nHere is a preview of the dataset after one hot encoding. This will be the dataset used for data analysis: \n"
 )
+print(df.head())
+
 
 
 input("\nPress Enter to continue.\n")
